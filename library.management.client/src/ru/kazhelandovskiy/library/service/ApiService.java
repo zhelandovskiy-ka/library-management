@@ -56,7 +56,6 @@ public class ApiService {
 
 	private boolean deleteItem(String apiUrl, Long id) {
 		String url = String.format(apiUrl + "/%s", id);
-		System.out.println(url);
 		HttpRequest request = HttpRequest.newBuilder()
 				.uri(URI.create(url))
 				.DELETE()
@@ -66,7 +65,8 @@ public class ApiService {
 	
 			try {
 				response = client.send(request, HttpResponse.BodyHandlers.ofString());
-				System.out.println(response.body());
+				if (response.body().equals("false")) 
+					throw new RuntimeException("delete error");
 			} catch (IOException e) {
 				e.printStackTrace();
 			} catch (InterruptedException e) {
