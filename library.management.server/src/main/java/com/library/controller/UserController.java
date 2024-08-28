@@ -22,14 +22,6 @@ public class UserController {
 	private UserService userService;
 
 	@GET
-	@Path("/test")
-	@Consumes(MediaType.APPLICATION_JSON)
-	public List<User> test() {
-		System.out.println("sdfsgsdgs");
-		return userService.getAll();
-	}
-
-	@GET
 	@Consumes(MediaType.APPLICATION_JSON)
 	public List<User> getAllUsers() {
 		return userService.getAll();

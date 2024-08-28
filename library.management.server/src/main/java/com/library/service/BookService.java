@@ -12,6 +12,4 @@ public interface BookService {
 	boolean delete(Long id);
 	
 	List<Book> getAll();
-	
-	String test();
 }

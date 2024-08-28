@@ -34,9 +34,4 @@ public class BookServiceImpl implements BookService {
 	public boolean delete(Long id) {
 		return bookDao.delete(id);
 	}
-
-	@Override
-	public String test() {
-		return bookDao.printTest();
-	}
 }

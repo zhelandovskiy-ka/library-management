@@ -19,11 +19,6 @@ public class BookDaoImpl implements BookDao {
 	}
 
 	@Override
-	public String printTest() {
-		return "test message";
-	}
-
-	@Override
 	public Book create(Book book) {
 		Transaction transaction = null;
 		try (Session session = sessionFactory.openSession()) {
@@ -66,7 +61,7 @@ public class BookDaoImpl implements BookDao {
 			session.merge(book);
 			transaction.commit();
 			
-			return book;
+			return getById(book.getId());
 		} catch (Exception e) {
 			if (transaction != null) {
 				transaction.rollback();

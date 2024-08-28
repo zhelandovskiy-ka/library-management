@@ -14,6 +14,4 @@ public interface BookDao {
 	boolean delete(Long id);
 
 	List<Book> getAll();
-
-	String printTest();
 }
